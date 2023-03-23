@@ -1,0 +1,38 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+  box-sizing: border-box;
+  @include respond(phone) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $default-font, sans-serif;
+  background-color: $white;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}

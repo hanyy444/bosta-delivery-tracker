@@ -1,0 +1,13 @@
+.feedback {
+    padding: 1rem 10rem;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $failure;
+    color: $white;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: $bold;
+    z-index: 2;
+}

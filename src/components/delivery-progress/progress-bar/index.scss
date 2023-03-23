@@ -1,0 +1,75 @@
+.progress-bar {
+    max-width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include respond(phone){
+        max-width: 100%;
+        margin: 0;
+    }
+
+    padding: 2rem 0;
+
+    .step {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        
+        text-align: center;
+
+        .progress{
+            position: relative;
+            max-height: 2rem;
+            
+            svg {
+                display: block;
+                border-radius: 50%;
+                color: $white;
+                background-color: $light-grey;
+                width: 2rem;
+                height: 2rem;
+                padding: .3rem;
+                
+            }
+
+            .space {
+                display: inline-block;
+                height: .5rem;
+                background-color: $light-grey;
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                z-index: -1;
+            }
+
+            &.success { svg, .space { background-color: $success;} }
+            &.in-progress { svg, .space { background-color: $in-progress; } }
+            &.failure { svg, .space { background-color: $failure; } }
+
+            &:not(.success) {
+                margin-bottom: 1rem;
+                svg.big-icon {
+                    width: 4rem;
+                    height: 4rem;
+                    transform: translateY(-25%);
+                }
+                .space { top: 35%; }
+                font-weight: $bold;
+            }
+        }
+
+        span {
+            &.success { color: $success; }
+            &.in-progress { color: $in-progress; }
+            &.failure { color: $failure; }
+        }
+    }
+}

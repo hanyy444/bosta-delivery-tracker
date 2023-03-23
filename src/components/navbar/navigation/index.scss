@@ -1,0 +1,102 @@
+.navbar {
+
+    .nav {
+        @include flexBetween;
+        flex-direction: row-reverse;
+    }
+    
+    .controls {
+        @include flexBetween;
+        flex-direction: row-reverse;
+        gap: 2rem;
+        
+        button {
+            color: $main;
+            font-weight: $bold;
+        }
+        
+        .divider {
+            width: .2rem;
+            height: 2rem;
+            background-color: #eef;
+        }
+    }
+    
+    .nav-link {
+        font-weight: $bold;
+        
+        &:hover,
+        &:active {
+            color: $main;
+        }
+        
+        &:focus {
+            color: $main;
+            outline: 1px solid $light-grey;
+        }
+    }
+    
+    .with-chevron {
+        display: flex;
+        gap: .5rem;
+        position: relative;
+        
+        &::before {
+            content: '\2304';
+            display: inline;
+            margin-top: -.2rem;
+        }
+    }
+    
+    .dropdown {
+        background-color: $white;
+        border: 1px solid $light-grey;
+        position: absolute;
+        padding: 1rem;
+        top: 5rem;
+        left: 0;
+        z-index: 2;
+        
+        &>div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            
+            input {
+                height: 100%;
+                
+                background-color: inherit;
+                font-size: 1.5rem;
+                text-align: end;
+                padding: 1rem;
+                
+                border: 2px solid $light-grey;
+                border-radius: 1rem;
+                border-left: 0;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                
+                &::-webkit-input-placeholder {
+                    font-weight: $light;
+                    color: rgba(0, 0, 0, 0.3);
+                }
+                
+                &:focus {
+                    outline: none;
+                }
+            }
+            
+            svg {
+                width: 4rem;
+                height: 4rem;
+                color: $white;
+                padding: 1rem;
+                border-radius: 1rem;
+                background-color: $main;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+}

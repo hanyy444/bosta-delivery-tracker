@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap');
+
+// Colors
+$success: #3ad907;
+$in-progress: #ffd200;
+$failure: #d90716;
+
+$main: #d90716;
+$white: #fff;
+$light-grey: #eef;
+
+// Font
+$default-font: 'Cairo';
+
+$bold: 800;
+$semi-bold: 600;
+$light: 400;
+
+// Breakpoints
+$bp-phone: 37.5em;
+$bp-tablet: 75em;
+
+@mixin respond($break-point) {
+    @if $break-point ==phone {
+        @media only screen and (max-width:$bp-phone) {
+            @content;
+        }
+    }
+
+    @if $break-point ==tablet {
+        @media only screen and (max-width:$bp-tablet) {
+            @content;
+        }
+    }
+}
+
+// Utils
+@mixin flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+}

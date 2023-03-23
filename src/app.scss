@@ -1,0 +1,26 @@
+.app {
+  width: 100%;
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    @include respond(phone){
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+    }
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, min-content);
+    gap: 2rem;
+    padding: 5rem 0;
+    letter-spacing: .1rem;
+    @include respond(phone) {
+        padding: 0;
+        grid-template-rows: repeat(3, min-content);
+        gap: 0;
+    }
+  }
+}
